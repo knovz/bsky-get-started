@@ -3,6 +3,7 @@
 import os
 from dotenv import load_dotenv
 from atproto import Client
+from viewing_feeds.timeline import get_timeline, print_feed
 
 load_dotenv()
 
@@ -21,6 +22,8 @@ def main() -> None:
     """Main code, returns nothing."""
     print("Running")
     client = login()
+    timeline = get_timeline(client)
+    print_feed(timeline.feed)
 
 
 if __name__ == "__main__":
