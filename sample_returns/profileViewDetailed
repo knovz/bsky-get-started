@@ -1,0 +1,44 @@
+did='did:plc:xc2hrjx2k3gm7rm4ahvskyxl'
+handle='noesserio.bsky.social'
+associated=ProfileAssociated(
+    activity_subscription=ProfileAssociatedActivitySubscription(
+        allow_subscriptions='followers',
+        py_type='app.bsky.actor.defs#profileAssociatedActivitySubscription'
+    ),
+    chat=None,
+    feedgens=0,
+    labeler=False,
+    lists=0,
+    starter_packs=0,
+    py_type='app.bsky.actor.defs#profileAssociated'
+)
+avatar='https://cdn.bsky.app/img/avatar/plain/did:plc:xc2hrjx2k3gm7rm4ahvskyxl/bafkreihp6rl7i444uzhbhwykpcaz63fb6imrqaa6rao4we5o3e3h5yzjl4@jpeg'
+banner=None
+created_at='2026-01-22T13:08:55.625Z'
+debug=None
+description='learning to code'
+display_name='no es serio'
+followers_count=1
+follows_count=1
+indexed_at='2026-01-22T13:11:08.425Z'
+joined_via_starter_pack=None
+labels=[]
+pinned_post=None
+posts_count=8
+pronouns=None
+status=None
+verification=None
+viewer=ViewerState(
+    activity_subscription=None,
+    blocked_by=False,
+    blocking=None,
+    blocking_by_list=None,
+    followed_by=None,
+    following=None,
+    known_followers=None,
+    muted=False,
+    muted_by_list=None,
+    py_type='app.bsky.actor.defs#viewerState'
+) 
+website=None
+py_type='app.bsky.actor.defs#profileViewDetailed'
