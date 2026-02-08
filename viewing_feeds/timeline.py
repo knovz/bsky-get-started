@@ -3,7 +3,10 @@
 from atproto import Client
 from atproto_client import models
 
-def get_timeline(client: Client, cursor: str = '') -> models.AppBskyFeedGetTimeline.Response:
+
+def get_timeline(
+    client: Client, cursor: str = ""
+) -> models.AppBskyFeedGetTimeline.Response:
     """Returns timeline for specified client."""
     timeline = client.get_timeline(limit=4, cursor=cursor)
     return timeline

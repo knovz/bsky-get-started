@@ -7,6 +7,7 @@ from viewing_feeds.timeline import get_timeline, print_feed
 
 load_dotenv()
 
+
 def login() -> Client:
     """Return a blsky logged in client."""
     bsky_app_pass = os.getenv("BSKY_APP_PASS")
@@ -14,8 +15,9 @@ def login() -> Client:
 
     client = Client()
     profile_view = client.login(bsky_handle, bsky_app_pass)
-    print(f"Logged as \"{profile_view.display_name} \"(@{profile_view.handle})")
+    print(f'Logged as "{profile_view.display_name} "(@{profile_view.handle})')
     return client
+
 
 def select_option() -> str:
     """
@@ -35,22 +37,23 @@ def select_option() -> str:
     print("")
     print("x. Exit")
     print("")
-    choice=input("Please select\n")
+    choice = input("Please select\n")
     print("")
     return choice
+
 
 def main() -> None:
     """Main code, returns nothing."""
     print("Running")
     client = login()
-    cursor = ''
+    cursor = ""
     while True:
         option = select_option()
-        if option == '1':
-            cursor = ''
-        if option == 'x':
+        if option == "1":
+            cursor = ""
+        if option == "x":
             break
-        elif option == '1' or option == '2':
+        elif option == "1" or option == "2":
             if cursor is None:
                 print("There are no more items in the feed")
             else:
@@ -63,6 +66,7 @@ def main() -> None:
                     print(f"\nTiemeline retrived up to {timeline.cursor}")
         else:
             print("Please select a valid option")
+
 
 if __name__ == "__main__":
     main()
