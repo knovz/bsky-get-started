@@ -17,14 +17,52 @@ def login() -> Client:
     print(f"Logged as \"{profile_view.display_name} \"(@{profile_view.handle})")
     return client
 
+def select_option() -> str:
+    """
+    Print option menu and return user input
+
+    Returns:
+        str -- user input. Not validated.
+    """
+    menu_options = {
+        1: "Home",
+        2: "Next",
+    }
+
+    print("")
+    for key, value in menu_options.items():
+        print(f"{key}. {value}")
+    print("")
+    print("x. Exit")
+    print("")
+    choice=input("Please select\n")
+    print("")
+    return choice
 
 def main() -> None:
     """Main code, returns nothing."""
     print("Running")
     client = login()
-    timeline = get_timeline(client)
-    print_feed(timeline.feed)
-
+    cursor = ''
+    while True:
+        option = select_option()
+        if option == '1':
+            cursor = ''
+        if option == 'x':
+            break
+        elif option == '1' or option == '2':
+            if cursor is None:
+                print("There are no more items in the feed")
+            else:
+                timeline = get_timeline(client, cursor)
+                cursor = timeline.cursor
+                print_feed(timeline.feed)
+                if cursor is None:
+                    print("\nThere are no more items in the feed")
+                else:
+                    print(f"\nTiemeline retrived up to {timeline.cursor}")
+        else:
+            print("Please select a valid option")
 
 if __name__ == "__main__":
     main()

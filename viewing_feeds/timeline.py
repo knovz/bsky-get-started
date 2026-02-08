@@ -3,12 +3,9 @@
 from atproto import Client
 from atproto_client import models
 
-
-# TODO for this to make sense it has to handle pagination!
 def get_timeline(client: Client, cursor: str = '') -> models.AppBskyFeedGetTimeline.Response:
     """Returns timeline for specified client."""
-    timeline = client.get_timeline(limit=5, cursor=cursor)
-    print(f"Tiemeline retrived up to {timeline.cursor}")
+    timeline = client.get_timeline(limit=4, cursor=cursor)
     return timeline
 
 
